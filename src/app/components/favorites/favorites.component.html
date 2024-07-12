@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>Favoritos</h2>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let video of favorites">
+        <div class="card mb-4">
+          <img [src]="video.snippet.thumbnails.high.url" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{ video.snippet.title }}</h5>
+            <button class="btn btn-danger" (click)="removeFromFavorites(video)">Eliminar de Favoritos</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

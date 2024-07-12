@@ -1,0 +1,56 @@
+<div class="container">
+    <h2>Registro</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div *ngIf="submitted && registerForm.invalid" class="alert alert-danger">
+        <div *ngIf="f.firstName.errors?.required">Nombre es requerido</div>
+        <div *ngIf="f.lastName.errors?.required">Apellido es requerido</div>
+        <div *ngIf="f.username.errors?.required">Nombre de usuario es requerido</div>
+        <div *ngIf="f.email.errors?.required">Correo electrónico es requerido</div>
+        <div *ngIf="f.email.errors?.email">Correo electrónico no es válido</div>
+        <div *ngIf="f.password.errors?.required">Contraseña es requerida</div>
+        <div *ngIf="f.password.errors?.minlength">Contraseña debe tener al menos 6 caracteres</div>
+        <div *ngIf="f.confirmPassword.errors?.required">Confirmación de contraseña es requerida</div>
+        <div *ngIf="f.recaptcha.errors?.required">ReCaptcha es requerido</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="firstName">Nombre</label>
+        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+      </div>
+  
+      <div class="form-group">
+        <label for="lastName">Apellido</label>
+        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+      </div>
+  
+      <div class="form-group">
+        <label for="username">Nombre de usuario</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+      </div>
+  
+      <div class="form-group">
+        <label for="confirmPassword">Confirmar contraseña</label>
+        <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
+      </div>
+  
+      <div class="form-group">
+        <label for="recaptcha">ReCaptcha</label>
+        <!-- Aquí debes agregar el widget de ReCaptcha -->
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </div>
+    </form>
+  </div>
+  

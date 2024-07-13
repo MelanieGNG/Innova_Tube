@@ -23,6 +23,5 @@ export class HomeComponent implements OnInit {
 
   addToFavorites(video: any): void {
     this.favorites.push(video);
-    // Puedes almacenar los favoritos en localStorage o en una base de datos
   }
 }

@@ -11,7 +11,6 @@ export class FavoritesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    // Carga los favoritos desde localStorage o desde una base de datos
     this.favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
   }
 

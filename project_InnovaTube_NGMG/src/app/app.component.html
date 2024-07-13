@@ -1,0 +1,25 @@
+<main class="main">
+  <div class="content">
+    <h1>NOTICIERO 612</h1>
+
+    <div *ngIF="noticias.length" === 0>Loading...</div>
+    <div *ngFor="let noticia of noticias">
+      <h2>{{ noticia.title}}</h2>
+      <p>{{noticia.text}}</p>
+      <img [src]="noticia.image">
+      <hr>
+    </div>
+      
+  </div>
+</main>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<router-outlet />
